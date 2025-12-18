@@ -12,27 +12,27 @@ spec:
           - key: topology.kubernetes.io/zone
             operator: In
             values:
-            - us-east-1d  # select 1 node az from instance nodes
-          # - key: disktype
-          #   operator: In
-          #   values:
-          #   - ssd  
-    # soft rule
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: project
-            operator: In
-            values:
-            - roboshop
-      - weight: 10
-        preference:
-          matchExpressions:
-          - key: project
-            operator: In
-            values:
-            - amazon
+            - us-east-1a  # select 1 node az from instance nodes
+    #       # - key: disktype
+    #       #   operator: In
+    #       #   values:
+    #       #   - ssd  
+    # # soft rule
+    #   preferredDuringSchedulingIgnoredDuringExecution:
+    #   - weight: 1
+    #     preference:
+    #       matchExpressions:
+    #       - key: project
+    #         operator: In
+    #         values:
+    #         - roboshop
+    #   - weight: 10
+    #     preference:
+    #       matchExpressions:
+    #       - key: project
+    #         operator: In
+    #         values:
+    #         - amazon
   containers:
   - name: nginx
     image: nginx
