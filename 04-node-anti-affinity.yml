@@ -12,7 +12,7 @@ spec:
           - key: topology.kubernetes.io/zone
             operator: NotIn
             values:
-            - us-east-1d  # select 1 node az from instance nodes
+            - us-east-1b  # select 1 node az from instance nodes
           # - key: disktype
           #   operator: In
           #   values:
