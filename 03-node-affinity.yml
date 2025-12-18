@@ -13,10 +13,10 @@ spec:
             operator: In
             values:
             - us-east-1a  # select 1 node az from instance nodes
-    #       # - key: disktype
-    #       #   operator: In
-    #       #   values:
-    #       #   - ssd  
+          - key: disktype
+            operator: In
+            values:
+            - ssd  
     # # soft rule
     #   preferredDuringSchedulingIgnoredDuringExecution:
     #   - weight: 1
