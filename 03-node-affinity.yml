@@ -13,26 +13,26 @@ spec:
             operator: In
             values:
             - us-east-1a  # select 1 node az from instance nodes
-          - key: disktype
+          # - key: disktype
+          #   operator: In
+          #   values:
+          #   - ssd  
+    # soft rule
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: project
             operator: In
             values:
-            - ssd  
-    # # soft rule
-    #   preferredDuringSchedulingIgnoredDuringExecution:
-    #   - weight: 1
-    #     preference:
-    #       matchExpressions:
-    #       - key: project
-    #         operator: In
-    #         values:
-    #         - roboshop
-    #   - weight: 10
-    #     preference:
-    #       matchExpressions:
-    #       - key: project
-    #         operator: In
-    #         values:
-    #         - amazon
+            - roboshop
+      - weight: 10
+        preference:
+          matchExpressions:
+          - key: project
+            operator: In
+            values:
+            - amazon
   containers:
   - name: nginx
     image: nginx
