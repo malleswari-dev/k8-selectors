@@ -14,10 +14,10 @@ spec:
             values:
             - ip-192-168-10-212.ec2.internal
             - ip-192-168-3-238.ec2.internal  # select 1 node az from instance nodes
-          # - key: disktype
-          #   operator: In
-          #   values:
-          #   - ssd  
+          - key: disktype
+            operator: In
+            values:
+            - ssd  
     # soft rule
       # preferredDuringSchedulingIgnoredDuringExecution:
       # - weight: 1
