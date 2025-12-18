@@ -9,10 +9,11 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: topology.kubernetes.io/zone
+          - key: kubernetes.io/hostname
             operator: NotIn
             values:
-            - us-east-1b  # select 1 node az from instance nodes
+            - ip-192-168-10-212.ec2.internal
+            - ip-192-168-3-238.ec2.internal  # select 1 node az from instance nodes
           # - key: disktype
           #   operator: In
           #   values:
