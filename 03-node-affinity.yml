@@ -9,30 +9,30 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: topology.kubernetes.io/zone
+          - key: kubernetes.io/hostname
             operator: In
             values:
-            - us-east-1a  # select 1 node az from instance nodes
+            - ip-192-168-10-212.ec2.internal  # select 1 node az from instance nodes
           # - key: disktype
           #   operator: In
           #   values:
           #   - ssd  
     # soft rule
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: project
-            operator: In
-            values:
-            - roboshop
-      - weight: 10
-        preference:
-          matchExpressions:
-          - key: project
-            operator: In
-            values:
-            - amazon
+      # preferredDuringSchedulingIgnoredDuringExecution:
+      # - weight: 1
+      #   preference:
+      #     matchExpressions:
+      #     - key: project
+      #       operator: In
+      #       values:
+      #       - roboshop
+      # - weight: 10
+      #   preference:
+      #     matchExpressions:
+      #     - key: project
+      #       operator: In
+      #       values:
+      #       - amazon
   containers:
   - name: nginx
     image: nginx
